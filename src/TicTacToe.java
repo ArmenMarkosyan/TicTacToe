@@ -1,15 +1,14 @@
 public class TicTacToe {
 
-    private static int count = 0;               //Iteration counter
-    private static int verticalSize;            //Vertical size of the board
-    private static int horizontalSize;          //Horizontal size of the board
-    private static int selectedRow;             //The row of the last selected cell
-    private static int selectedColumn;          //The column of the last selected cell
-    private static int winLineLength;           //The length of the winning criteria
-    private static char sign;                   //The symbol (X or O) of the last selected cell
+    private int count = 0;               //Iteration counter
+    private int verticalSize;            //Vertical size of the board
+    private int horizontalSize;          //Horizontal size of the board
+    private int selectedRow;             //The row of the last selected cell
+    private int selectedColumn;          //The column of the last selected cell
+    private int winLineLength;           //The length of the winning criteria
+    private char sign;                   //The symbol (X or O) of the last selected cell
 
-    public static void main(String[] args) {
-
+    public TicTacToe() {
         System.out.println("\n*****TicTacToe*****\n");
 
         Board game = new Board();
@@ -39,7 +38,7 @@ public class TicTacToe {
         System.out.println("Game is over!");
     }
 
-    public static boolean roll(Board play, char player) {
+    private boolean roll(Board play, char player) {
 
         count++;
 
@@ -60,12 +59,12 @@ public class TicTacToe {
         return false;
     }
 
-    private static boolean checkWin(Board game) {
+    private boolean checkWin(Board game) {
         return (vertical(game) || horizontal(game) || diagonal(game) || backDiagonal(game));
     }
 
     //Check the winning condition for vertical line
-    private static boolean vertical(Board g) {
+    private boolean vertical(Board g) {
         int winCount = 1;
         int i;
 
@@ -85,7 +84,7 @@ public class TicTacToe {
     }
 
     //Check the winning condition for horizontal line
-    private static boolean horizontal(Board g) {
+    private boolean horizontal(Board g) {
         int winCount = 1;
         int i;
 
@@ -105,7 +104,7 @@ public class TicTacToe {
     }
 
     //Check the winning condition for diagonal line
-    private static boolean diagonal(Board g) {
+    private boolean diagonal(Board g) {
         int winCount = 1;
         int i;
 
@@ -125,7 +124,7 @@ public class TicTacToe {
     }
 
     //Check the winning condition for back diagonal line
-    private static boolean backDiagonal(Board g) {
+    private boolean backDiagonal(Board g) {
         int winCount = 1;
         int i;
 
